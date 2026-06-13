@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ボクシング式ダイエット管理</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="app-header">
+  <h1>🥊 ボクシング式ダイエット管理</h1>
+  <div class="streak" id="streakBadge">🔥 連続0日</div>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="dashboard">ダッシュボード</button>
+  <button class="tab-btn" data-tab="boxing">ボクシング</button>
+  <button class="tab-btn" data-tab="meals">食事</button>
+  <button class="tab-btn" data-tab="sleep">睡眠</button>
+  <button class="tab-btn" data-tab="settings">設定</button>
+</nav>
+
+<main>
+
+  <!-- ダッシュボード -->
+  <section id="tab-dashboard" class="tab-content active">
+    <h2>今日のまとめ <span id="todayDate"></span></h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>摂取カロリー</h3>
+        <div class="big-num"><span id="dashIntake">0</span> / <span id="dashGoalKcal">-</span> kcal</div>
+        <div class="progress"><div class="progress-bar" id="barIntake"></div></div>
+      </div>
+      <div class="card">
+        <h3>運動消費</h3>
+        <div class="big-num"><span id="dashBurn">0</span> kcal</div>
+        <div class="sub">本日のボクシング運動</div>
+      </div>
+      <div class="card">
+        <h3>睡眠時間</h3>
+        <div class="big-num"><span id="dashSleep">-</span> 時間</div>
+        <div class="sub">目標: <span id="dashSleepGoal">-</span>時間</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>PFCバランス(本日)</h3>
+      <div class="pfc-row">
+        <div class="pfc-item">
+          <label>たんぱく質 (P)</label>
+          <div class="progress"><div class="progress-bar pfc-p" id="barP"></div></div>
+          <span id="textP">0 / 0 g</span>
+        </div>
+        <div class="pfc-item">
+          <label>脂質 (F)</label>
+          <div class="progress"><div class="progress-bar pfc-f" id="barF"></div></div>
+          <span id="textF">0 / 0 g</span>
+        </div>
+        <div class="pfc-item">
+          <label>炭水化物 (C)</label>
+          <div class="progress"><div class="progress-bar pfc-c" id="barC"></div></div>
+          <span id="textC">0 / 0 g</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>週間トレンド</h3>
+      <canvas id="weeklyChart" height="100"></canvas>
+    </div>
+  </section>
+
+  <!-- ボクシング -->
+  <section id="tab-boxing" class="tab-content">
+    <h2>🥊 ボクシングエクササイズ</h2>
+    <div class="card">
+      <h3>記録を追加</h3>
+      <form id="workoutForm" class="form-grid">
+        <label>種類
+          <select id="workoutType"></select>
+        </label>
+        <label>時間(分)
+          <input type="number" id="workoutDuration" min="1" value="20" required>
+        </label>
+        <label>メモ
+          <input type="text" id="workoutNote" placeholder="例: 3ラウンド">
+        </label>
+        <div id="safetyNote" class="safety-note" style="display:none;">
+          ⚠️ スパーリングを行う際は、ヘッドギア・マウスピース・グローブなどの安全防具を必ず着用し、相手と安全を確認した上で行いましょう。
+        </div>
+        <button type="submit">追加する</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>本日の記録</h3>
+      <div id="todayWorkoutList" class="record-list"></div>
+      <div class="total-line">本日の消費カロリー合計: <strong id="todayWorkoutTotal">0</strong> kcal</div>
+    </div>
+
+    <div class="card">
+      <h3>履歴</h3>
+      <div id="workoutHistory" class="record-list"></div>
+    </div>
+  </section>
+
+  <!-- 食事 -->
+  <section id="tab-meals" class="tab-content">
+    <h2>🍚 食事・PFC管理</h2>
+
+    <div class="card">
+      <h3>📷 写真から記録</h3>
+      <p class="sub">食事の写真をアップロードすると、AIが料理名とおおよそのカロリー・PFCを推定します(設定タブでAPIキーが必要)</p>
+      <div class="form-grid">
+        <label>写真
+          <input type="file" id="photoInput" accept="image/*" capture="environment">
+        </label>
+        <button id="analyzePhotoBtn" type="button">写真を解析する</button>
+      </div>
+      <img id="photoPreview" style="display:none; max-width:100%; border-radius:8px; margin-top:10px;">
+      <div id="photoStatus" class="sub" style="display:none;"></div>
+
+      <form id="photoResultForm" class="form-grid" style="display:none; margin-top:12px;">
+        <div class="nutrient-preview">解析結果を確認・編集してから記録してください</div>
+        <label>食事タイプ
+          <select id="photoMealType">
+            <option value="朝食">朝食</option>
+            <option value="昼食">昼食</option>
+            <option value="夕食">夕食</option>
+            <option value="間食">間食</option>
+          </select>
+        </label>
+        <label>料理名 <input type="text" id="photoName" required></label>
+        <label>カロリー(kcal) <input type="number" id="photoKcal" min="0" required></label>
+        <label>P(g) <input type="number" id="photoP" min="0" step="0.1" required></label>
+        <label>F(g) <input type="number" id="photoF" min="0" step="0.1" required></label>
+        <label>C(g) <input type="number" id="photoC" min="0" step="0.1" required></label>
+        <button type="submit">この内容で記録する</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>食事を記録</h3>
+      <form id="mealForm" class="form-grid">
+        <label>食事タイプ
+          <select id="mealType">
+            <option value="朝食">朝食</option>
+            <option value="昼食">昼食</option>
+            <option value="夕食">夕食</option>
+            <option value="間食">間食</option>
+          </select>
+        </label>
+        <label>食品
+          <select id="foodSelect"></select>
+        </label>
+        <label>量(g/ml)
+          <input type="number" id="foodAmount" min="1" value="100" required>
+        </label>
+        <div class="nutrient-preview" id="nutrientPreview"></div>
+        <button type="submit">追加する</button>
+      </form>
+      <details class="custom-food">
+        <summary>カスタム食品を追加(手動入力)</summary>
+        <form id="customFoodForm" class="form-grid">
+          <label>食品名 <input type="text" id="customName" required></label>
+          <label>カロリー(kcal) <input type="number" id="customKcal" min="0" required></label>
+          <label>P(g) <input type="number" id="customP" min="0" step="0.1" required></label>
+          <label>F(g) <input type="number" id="customF" min="0" step="0.1" required></label>
+          <label>C(g) <input type="number" id="customC" min="0" step="0.1" required></label>
+          <label>食事タイプ
+            <select id="customMealType">
+              <option value="朝食">朝食</option>
+              <option value="昼食">昼食</option>
+              <option value="夕食">夕食</option>
+              <option value="間食">間食</option>
+            </select>
+          </label>
+          <button type="submit">カスタム食品を追加</button>
+        </form>
+      </details>
+    </div>
+
+    <div class="card">
+      <h3>本日の食事</h3>
+      <div id="todayMealList" class="record-list"></div>
+      <div class="total-line">
+        本日合計: <strong id="todayMealKcal">0</strong> kcal
+        (P: <span id="todayMealP">0</span>g / F: <span id="todayMealF">0</span>g / C: <span id="todayMealC">0</span>g)
+      </div>
+    </div>
+  </section>
+
+  <!-- 睡眠 -->
+  <section id="tab-sleep" class="tab-content">
+    <h2>😴 睡眠管理</h2>
+    <div class="card">
+      <h3>睡眠を記録</h3>
+      <form id="sleepForm" class="form-grid">
+        <label>日付 <input type="date" id="sleepDate" required></label>
+        <label>就寝時刻 <input type="time" id="bedTime" required></label>
+        <label>起床時刻 <input type="time" id="wakeTime" required></label>
+        <label>睡眠の質
+          <select id="sleepQuality">
+            <option value="good">良い</option>
+            <option value="normal" selected>普通</option>
+            <option value="bad">悪い</option>
+          </select>
+        </label>
+        <button type="submit">記録する</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>睡眠履歴</h3>
+      <div class="total-line">週間平均睡眠時間: <strong id="weeklyAvgSleep">-</strong> 時間</div>
+      <div id="sleepHistory" class="record-list"></div>
+    </div>
+  </section>
+
+  <!-- 設定 -->
+  <section id="tab-settings" class="tab-content">
+    <h2>⚙️ 設定・目標</h2>
+    <div class="card">
+      <h3>プロフィール</h3>
+      <form id="profileForm" class="form-grid">
+        <label>名前 <input type="text" id="profName"></label>
+        <label>性別
+          <select id="profGender">
+            <option value="male">男性</option>
+            <option value="female">女性</option>
+          </select>
+        </label>
+        <label>年齢 <input type="number" id="profAge" min="10" max="100" required></label>
+        <label>身長(cm) <input type="number" id="profHeight" min="100" max="250" required></label>
+        <label>体重(kg) <input type="number" id="profWeight" min="30" max="200" step="0.1" required></label>
+        <label>活動レベル
+          <select id="profActivity">
+            <option value="1.2">低い(座り仕事中心)</option>
+            <option value="1.375">普通(週1-3回の運動)</option>
+            <option value="1.55">活発(週3-5回の運動)</option>
+            <option value="1.725">非常に活発(連日激しい運動)</option>
+          </select>
+        </label>
+        <label>減量ペース(1日の消費カロリー差)
+          <select id="profDeficit">
+            <option value="0">維持(0kcal)</option>
+            <option value="250">ゆっくり減量(-250kcal)</option>
+            <option value="500">標準的な減量(-500kcal)</option>
+          </select>
+        </label>
+        <fieldset class="pfc-ratio">
+          <legend>PFC比率(%) 合計100になるよう調整</legend>
+          <label>P <input type="number" id="ratioP" min="0" max="100" required></label>
+          <label>F <input type="number" id="ratioF" min="0" max="100" required></label>
+          <label>C <input type="number" id="ratioC" min="0" max="100" required></label>
+        </fieldset>
+        <label>睡眠目標(時間) <input type="number" id="profSleepGoal" min="4" max="12" step="0.5" required></label>
+        <button type="submit">保存する</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>あなたの目標値</h3>
+      <table class="goal-table">
+        <tr><td>基礎代謝(BMR)</td><td id="calcBMR">-</td></tr>
+        <tr><td>1日の総消費カロリー(TDEE)</td><td id="calcTDEE">-</td></tr>
+        <tr><td>1日の目標摂取カロリー</td><td id="calcGoalKcal">-</td></tr>
+        <tr><td>たんぱく質 目標</td><td id="calcGoalP">-</td></tr>
+        <tr><td>脂質 目標</td><td id="calcGoalF">-</td></tr>
+        <tr><td>炭水化物 目標</td><td id="calcGoalC">-</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>写真解析(AI)の設定</h3>
+      <p class="sub">
+        食事の写真からカロリーを推定する機能には Anthropic API キーが必要です。
+        <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a> で取得できます。
+        キーはこの端末のブラウザ内にのみ保存され、外部には送信されません(解析時にAnthropic APIへ直接送信されます)。
+      </p>
+      <form id="apiKeyForm" class="form-grid">
+        <label>Anthropic API キー <input type="password" id="apiKeyInput" placeholder="sk-ant-..."></label>
+        <button type="submit">保存する</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>データ管理</h3>
+      <p class="sub">このアプリのデータはブラウザ内(localStorage)に保存されます。バックアップ用にエクスポート/インポートできます。</p>
+      <button id="exportBtn">データをエクスポート</button>
+      <label class="file-label">データをインポート
+        <input type="file" id="importFile" accept="application/json">
+      </label>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/foods.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
