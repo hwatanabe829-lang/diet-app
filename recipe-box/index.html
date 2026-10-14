@@ -3,17 +3,42 @@
 <html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="#fdf9f3" name="theme-color"/><meta content="スクリーンショットを登録するだけで、レシピを自分だけのコレクションに。" name="description"/><title>レシピ箱 | スクショからマイレシピ</title><style>:root{--bg:#fbf9f5;--panel:#fff;--ink:#332a24;--muted:#8c8177;--line:#eee6dd;--accent:#d97846;--accent-d:#a9502d;--light:#f9ede2;--green:#647a56;--shadow:0 16px 45px rgba(75,51,35,.08)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',Meiryo,'Noto Sans JP',system-ui,sans-serif;line-height:1.68}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:var(--accent-d)}.container{width:min(1120px,calc(100% - 42px));margin:auto}.topbar{background:rgba(255,255,255,.9);position:sticky;top:0;z-index:20;border-bottom:1px solid #efe8df;backdrop-filter:blur(14px)}.topinner{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:15px}.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:900;letter-spacing:.04em}.brand-mark{background:#f9dfc8;width:39px;height:39px;display:grid;place-items:center;border-radius:13px;font-size:22px}.nav-btn{border:1px solid var(--line);border-radius:30px;background:#fff;color:var(--ink);padding:10px 17px;font-size:13px;font-weight:700}.nav-btn:hover{background:var(--light)}.hero{margin-top:34px;padding:40px 48px;background:linear-gradient(110deg,#fbe7d7,#fef5e5 65%,#eff3dc);border-radius:30px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:22px}.hero:after{content:'🍓';font-size:135px;position:absolute;right:20px;bottom:-73px;opacity:.14;transform:rotate(-17deg)}.hero-copy{position:relative;z-index:1}.eyebrow{font-size:13px;color:#ad653c;font-weight:900;letter-spacing:.12em}.hero h1{font-size:clamp(26px,3.6vw,43px);line-height:1.34;letter-spacing:-.04em;margin:12px 0}.hero p{font-size:14px;margin:0 0 22px;color:#766354}.action-row{display:flex;flex-wrap:wrap;gap:10px}.primary{border:0;background:var(--accent);color:#fff;padding:13px 22px;border-radius:16px;font-weight:900;box-shadow:0 5px 12px #d9784638}.primary:hover{background:var(--accent-d)}.ghost{border:1px solid #dec5ae;background:rgba(255,255,255,.65);padding:12px 18px;border-radius:16px;color:#784d36;font-weight:800}.hero-visual{width:225px;flex-shrink:0;position:relative;z-index:1}.hero-visual .plate{aspect-ratio:1;background:white;border-radius:50%;box-shadow:0 15px 30px #b4846336;display:grid;place-items:center;font-size:100px;transform:rotate(8deg)}.stats{display:flex;gap:22px;align-items:center;margin:27px 0 19px}.stats b{font-size:22px;font-weight:900}.stats span{font-size:13px;color:var(--muted);margin-left:7px}.section-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:14px 0}.section-head h2{font-size:24px;margin:0}.section-head p{color:var(--muted);margin:3px 0 0;font-size:13px}.tools{display:flex;gap:10px;align-items:center;margin-bottom:23px;flex-wrap:wrap}.search{flex:1;min-width:190px;padding:12px 15px;border-radius:14px;background:#fff;border:1px solid var(--line);outline:none}.search:focus,.form-control:focus{border-color:var(--accent);outline:2px solid #f2bd9a55}.pill{border:1px solid var(--line);background:#fff;color:#705e54;padding:10px 15px;border-radius:40px;font-size:13px;font-weight:800}.pill.active{background:#403429;color:white;border-color:#403429}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding-bottom:85px}.recipe-card{border-radius:22px;background:white;box-shadow:0 3px 16px #3b21120d;overflow:hidden;border:1px solid #f3ece6;cursor:pointer;transition:transform .15s,box-shadow .15s}.recipe-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.cover{aspect-ratio:1.4;position:relative;background:linear-gradient(145deg,#eed5ae,#f8ebdb);overflow:hidden}.cover img{width:100%;height:100%;object-fit:cover}.cover .fallback{display:grid;place-items:center;height:100%;font-size:78px}.category-tag{position:absolute;left:13px;top:13px;padding:5px 12px;background:#fffdf1ed;border-radius:40px;font-size:11px;font-weight:800}.fav-on-cover{position:absolute;right:12px;top:12px;width:36px;height:36px;background:#fffdf1ed;border:none;border-radius:50%;font-size:20px;color:#9c6556;display:grid;place-items:center;line-height:1}.fav-on-cover.on{color:#c54755}.card-body{padding:18px 18px 20px}.card-body h3{font-size:17px;line-height:1.5;min-height:49px;margin:0 0 7px;font-weight:900}.small{font-size:12px;color:var(--muted)}.card-desc{font-size:12px;color:#817369;margin:10px 0 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.empty{grid-column:1/-1;text-align:center;padding:65px 20px;background:#fff;border:1px dashed #ddd2c5;border-radius:18px;color:#786a60}.drop-mask{position:fixed;inset:0;background:#fae5cedd;z-index:60;display:none;place-items:center;font-weight:900;font-size:25px;border:10px dashed var(--accent)}.drop-mask.show{display:grid}.footer{border-top:1px solid var(--line);font-size:12px;color:#96877c;padding:27px 0 45px}.footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.modal-shell{position:fixed;inset:0;background:#251b18a6;z-index:40;display:none;align-items:center;justify-content:center;padding:20px;overflow-y:auto}.modal-shell.open{display:flex}.modal{width:min(790px,100%);background:white;max-height:calc(100vh - 38px);overflow-y:auto;border-radius:25px;box-shadow:0 30px 80px #17090442;position:relative}.modal-wide{width:min(920px,100%)}.modal-header{padding:20px 24px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line)}.modal-header h2{font-size:19px;margin:0}.xbtn{background:#f5f0eb;border:0;border-radius:50%;width:34px;height:34px;font-size:21px;color:#746357;display:grid;place-items:center}.modal-content{padding:24px}.detail-cover{height:300px;position:relative;background:linear-gradient(145deg,#f2d6b6,#ebedce);overflow:hidden}.detail-cover img{width:100%;height:100%;object-fit:cover}.detail-top{margin-bottom:15px}.detail-top h2{margin:6px 0;font-size:26px}.detail-content{display:grid;grid-template-columns:1fr 1.2fr;gap:29px}.detail-content h3{font-size:16px;margin:19px 0 7px;padding-bottom:8px;border-bottom:2px solid #f5e9dc}.multiline{white-space:pre-wrap;font-size:14px;overflow-wrap:anywhere}.meta-note{font-size:12px;color:#88786e}.detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.danger{border:1px solid #e9b8b8;color:#a74343;background:#fff8f8}.form-field{display:grid;gap:7px;margin-bottom:17px}.form-field label{font-size:13px;font-weight:900}.form-control{border:1px solid #e9ded5;border-radius:13px;background:#fff;padding:11px 13px;width:100%;font-size:14px;resize:vertical;outline:none;color:#42372c}.form-field small{font-size:11px;color:#95897d}.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.edit-footer{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:15px}.muted-btn{border:1px solid var(--line);background:#fff;padding:11px 16px;border-radius:12px;font-size:13px;font-weight:800}.external-images{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.external-image-card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;text-align:left;padding:0;display:block}.external-image-card img{width:100%;aspect-ratio:1.3;object-fit:cover}.external-image-card p{font-size:10px;line-height:1.3;padding:6px;margin:0;color:#6f6157}.info-panel{background:#fcf5eb;border-radius:12px;padding:15px;margin:12px 0;font-size:12px;color:#7e6653}.status{margin:8px 0;font-size:13px;color:#775a44}.busy{display:inline-flex;align-items:center;gap:10px;background:#fff3e5;border:1px solid #e5c49c;border-radius:30px;padding:8px 13px;font-size:12px;color:#755b43}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#302720;color:white;border-radius:12px;padding:12px 19px;box-shadow:0 10px 35px #0004;z-index:100;max-width:min(520px,90%);font-size:13px;display:none}.toast.show{display:block}.authorship{margin-top:9px;color:#93857a;font-size:10px}.link{color:var(--accent-d);text-decoration:underline;cursor:pointer}.tiny-loading{height:12px;width:12px;border-radius:50%;border:2px solid #cbab8b;border-top-color:#9a5025;display:inline-block;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.ocr-bar{height:7px;background:#eddac8;border-radius:20px;overflow:hidden;margin-top:10px}.ocr-bar>div{height:100%;background:var(--accent);width:0%;transition:width .2s}.settings-flex{display:flex;gap:12px;flex-wrap:wrap}.settings-flex button{flex:1;min-width:175px}.setting-blurb{font-size:12px;color:#87776c}.hidden{display:none!important}@media(max-width:760px){.container{width:calc(100% - 28px)}.topinner{min-height:65px}.hero{padding:26px 20px;margin-top:17px;border-radius:22px}.hero h1{font-size:30px}.hero-visual{display:none}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card-body{padding:13px}.card-body h3{font-size:14px;min-height:43px}.detail-content{grid-template-columns:1fr;gap:0}.two-cols{grid-template-columns:1fr}.section-head h2{font-size:21px}.modal-shell{padding:0;align-items:flex-end}.modal{max-height:95dvh;border-radius:21px 21px 0 0}.modal-content{padding:18px}.detail-cover{height:240px}.external-images{grid-template-columns:repeat(2,1fr)}.tools{gap:7px}.search{flex-basis:100%}.nav-btn{padding:8px 11px;font-size:12px}.brand{font-size:18px}.stats{gap:13px}}@media(max-width:370px){.cards{grid-template-columns:1fr}}
 
 #installAction{position:fixed;bottom:18px;right:16px;background:#4f704b;color:#fff;z-index:19;box-shadow:0 8px 30px #0002;border:0;padding:13px 15px;border-radius:50px;font-size:13px;font-weight:800}#installAction[hidden]{display:none}button,input[type="file"]{touch-action:manipulation}@media(max-width:760px){.topinner{min-height:61px}.topbar{padding-top:env(safe-area-inset-top)}.nav-btn,.primary,.pill{min-height:44px}.modal{padding-bottom:env(safe-area-inset-bottom)}.cards{padding-bottom:calc(75px + env(safe-area-inset-bottom));}.hero{padding:24px 18px}.hero h1{font-size:clamp(25px,6vw,31px)}#installAction{bottom:calc(18px + env(safe-area-inset-bottom))}}
+
+#authGate{position:fixed;inset:0;background:#fbf9f5;z-index:1000;display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:24px 14px}
+#authGate[hidden],#authForm[hidden],#authSwitch[hidden],#accountBtn[hidden]{display:none!important}
+.authBox{background:#fff;width:min(420px,100%);padding:30px 25px;border:1px solid #ece2d5;border-radius:26px;box-shadow:0 12px 38px #492c1c12;text-align:center}
+.authBox h2{margin:5px 0}.authBox p{font-size:13px;color:#70665e}.authBox form{text-align:left;margin:15px 0}.authBox label{display:block;font-size:13px;font-weight:bold;margin:12px 0 4px}.authBox .muted-btn{margin-top:12px}
+.authLogo{font-size:48px}.accountBtns{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.accountBtns .nav-btn{font-size:12px}.sharing .stats,.sharing .section-head:not(#sharedPanel .section-head),.sharing .tools,.sharing #cards{display:none!important}
+#sharedPanel{margin:25px auto;padding:22px 0}#sharedPanel .section-head{display:flex!important;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#sharedCards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+@media(max-width:650px){.topinner{flex-wrap:wrap;padding:8px 0}.accountBtns{width:100%;justify-content:space-between}.accountBtns .nav-btn{padding:8px}.authBox{padding:20px 16px}}
 </style><link href="./manifest.webmanifest" rel="manifest"/><link href="./icons/icon-192.png" rel="icon" sizes="192x192" type="image/png"/><link href="./icons/icon-192.png" rel="apple-touch-icon"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="レシピ箱" name="apple-mobile-web-app-title"/></head><body>
-<header class="topbar"><div class="container topinner"><div class="brand"><div class="brand-mark">🍑</div><span>レシピ箱</span></div><button class="nav-btn" id="settingsBtn" type="button">⚙ バックアップ・設定</button></div></header>
+<div id="authGate" role="dialog" aria-modal="true" aria-label="アカウントにログイン">
+  <div class="authBox">
+    <div class="authLogo">🍑</div><h2>わたしのレシピ箱</h2>
+    <p>自分だけのレシピを保存し、選んだものだけみんなに共有できます。</p>
+    <p id="authStatus" class="small" role="status">ログイン状態を確認しています…</p>
+    <form id="authForm" hidden>
+      <label for="authUsername">ユーザーID</label><input id="authUsername" class="form-control" autocomplete="username" required pattern="[a-z0-9_-]{3,30}" placeholder="例：recipe_123" maxlength="30">
+      <label for="authPassword">パスワード（12文字以上）</label><input id="authPassword" class="form-control" type="password" autocomplete="current-password" required minlength="12" maxlength="128">
+      <button id="authSubmit" type="submit" class="primary" style="width:100%;margin-top:18px">ログイン</button>
+    </form>
+    <button id="authSwitch" type="button" class="muted-btn" hidden>新規登録はこちら</button>
+    <p class="small">パスワードを運営者に送らないでください。ログイン情報は暗号学的に保護して保存します。</p>
+  </div>
+</div>
+<header class="topbar"><div class="container topinner"><div class="brand"><div class="brand-mark">🍑</div><span>レシピ箱</span></div><div class="accountBtns"><button class="nav-btn" id="sharedBtn" type="button">🌐 みんなのレシピ</button><button class="nav-btn" id="settingsBtn" type="button">⚙ 設定</button><button class="nav-btn" id="accountBtn" type="button" hidden>👤 アカウント</button></div></div></header>
 <main class="container">
 <section class="hero"><div class="hero-copy"><div class="eyebrow">MY PRIVATE RECIPE BOOK</div><h1>見つけたおいしさ、<br/>スクショでそのまま保存。</h1><p>SNSで見つけたレシピを一括管理。材料・手順も日本語で読み取ります。</p><div class="action-row"><button class="primary" id="uploadBtn" type="button">📸 スクショから追加</button><button class="ghost" id="newBtn" type="button">＋ 手入力で追加</button></div></div><div aria-hidden="true" class="hero-visual"><div class="plate">🍮</div></div></section>
+<section id="sharedPanel" class="hidden" aria-label="共有レシピ"><div class="section-head"><div><h2>🌐 みんなの共有レシピ</h2><p>共有を許可されたレシピだけが表示されます。自分のメモや元画像は共有されません。</p></div><button type="button" class="muted-btn" id="backToMine">マイレシピに戻る</button></div><div id="sharedCards" class="cards"></div></section>
 <section class="stats"><div><b id="count">0</b><span>登録レシピ</span></div><div><b id="favCount">0</b><span>お気に入り</span></div></section>
 <div class="hidden" id="progressRow" role="status"><div class="busy"><span class="tiny-loading"></span><span id="progressText">準備中...</span></div><div class="ocr-bar"><div id="ocrFill"></div></div><p class="small">初回は日本語OCRの読み込みに時間がかかります。入力した画像の文字認識は端末内で処理されます。</p></div>
 <div class="section-head"><div><h2>マイレシピ <span style="font-size:20px">🍴</span></h2><p id="listHint">保存したレシピをいつでも見返せます。</p></div></div>
 <div class="tools"><input class="search" id="search" placeholder="🔍 レシピ名・材料で検索" type="search"/><button class="pill active" data-filter="all" type="button">すべて</button><button class="pill" data-filter="favorite" type="button">♡ お気に入り</button><button class="pill" data-filter="ケーキ" type="button">🍰 ケーキ</button><button class="pill" data-filter="アイス" type="button">🍨 アイス</button></div>
 <section aria-label="登録したレシピ" class="cards" id="cards"></section>
 </main>
-<footer class="footer"><div class="container"><span>© 2026 レシピ箱 · 端末内で保管するプライベートレシピ帳</span><span>バックアップを定期的に保存してください。</span></div></footer>
+<footer class="footer"><div class="container"><span>© 2026 レシピ箱 · 自分用・共有の切り替えができるレシピ帳</span><span>バックアップを定期的に保存してください。</span></div></footer>
 <input accept="image/*" hidden="" id="fileInput" multiple="" type="file"/><input accept=".json,application/json" hidden="" id="importInput" type="file"/>
 <div class="drop-mask" id="dropMask">📸 ここにスクリーンショットをドロップ</div>
 <div aria-hidden="true" class="modal-shell" id="modalShell"><div aria-label="レシピ詳細" aria-modal="true" class="modal" id="modal" role="dialog"></div></div>
@@ -26,16 +51,82 @@ const safeImg=(src)=>/^https:\/\//i.test(src||'')||/^data:image\/(?:jpeg|jpg|png
 const safeUrl=(src)=>/^https:\/\//i.test(src||'')?src:'';
 const uuid=()=>globalThis.crypto?.randomUUID?.()||'r'+Date.now()+'-'+Math.random().toString(36).slice(2);
 const fmtDate=s=>{try{return new Date(s).toLocaleDateString('ja-JP',{year:'numeric',month:'short',day:'numeric'});}catch{return ''}};
+
+let currentUser = null;
+let registerMode = false;
+let sharedRows = [];
+async function api(path, options={}) {
+ const response=await fetch(path,{credentials:'same-origin',headers:{'Accept':'application/json',...(options.body?{'Content-Type':'application/json'}:{}),...(options.headers||{})},...options});
+ let data;try{data=await response.json()}catch{throw Error('サーバーの応答を読めませんでした');}
+ if(!response.ok)throw Error(data.error || '通信エラー '+response.status);
+ return data;
+}
+function authMsg(message){document.getElementById('authStatus').textContent=message||'';}
+function showAuth(message=''){document.getElementById('authGate').hidden=false;document.getElementById('authForm').hidden=false;document.getElementById('authSwitch').hidden=false;authMsg(message);}
+function swapAuth(){registerMode=!registerMode;document.getElementById('authSubmit').textContent=registerMode?'アカウントを作成':'ログイン';document.getElementById('authSwitch').textContent=registerMode?'既にアカウントがある方はこちら':'新規登録はこちら';document.getElementById('authPassword').autocomplete=registerMode?'new-password':'current-password';authMsg(registerMode?'IDとパスワードを登録すると個人用レシピ帳が作成されます。':'IDとパスワードを入力してください。');}
+async function enterAccount(user) {
+ currentUser=user;document.getElementById('authGate').hidden=true;
+ document.getElementById('accountBtn').hidden=false;document.getElementById('accountBtn').textContent='👤 '+user.username;
+ document.getElementById('authPassword').value='';
+ await init();
+}
+async function authBoot(){
+ try{const x=await api('/api/auth/me');if(x.user){await enterAccount(x.user);return;}}catch(e){if(!/ログインしてください/.test(e.message)){showAuth('接続エラー：'+e.message);return;}}
+ showAuth('ログイン、または新しくアカウントを作成してください。');
+}
+document.getElementById('authForm').addEventListener('submit',async e=>{
+ e.preventDefault();const username=document.getElementById('authUsername').value.trim().toLowerCase(),password=document.getElementById('authPassword').value;
+ const btn=document.getElementById('authSubmit');btn.disabled=true;
+ try{const res=await api('/api/auth/'+(registerMode?'register':'login'),{method:'POST',body:JSON.stringify({username,password})});await enterAccount(res.user);}
+ catch(e){authMsg('⚠ '+e.message);}finally{btn.disabled=false;}
+});
+document.getElementById('authSwitch').addEventListener('click',swapAuth);
+document.getElementById('accountBtn').addEventListener('click',async()=>{
+ if(!confirm('ログアウトしますか？端末に残る個人用データは削除されません。'))return;
+ try{await api('/api/auth/logout',{method:'POST'});}catch(e){console.warn(e);}
+ if(db){db.close();db=null;}currentUser=null;recipes=[];render();document.getElementById('accountBtn').hidden=true;
+ document.body.classList.remove('sharing');document.getElementById('sharedPanel').classList.add('hidden');showAuth('ログアウトしました。');
+});
+async function loadShared(){try{
+ const x=await api('/api/shared');sharedRows=x.recipes||[];
+ const box=document.getElementById('sharedCards');
+ box.innerHTML=sharedRows.length?sharedRows.map((r,i)=>`<article class="recipe-card" style="min-height:160px"><div class="card-body"><p class="small">${esc(r.owner)}さんのレシピ</p><h3>${esc(r.title)}</h3><p class="small">${esc(r.category)}</p><p class="card-desc">${esc(r.ingredients.split('\n').slice(0,3).join(' / '))}</p><button type="button" class="muted-btn" data-view-shared="${i}">詳しく見る</button></div></article>`).join(''):'<p class="small">まだ共有レシピがありません。自分のレシピから「共有する」を押すと表示されます。</p>';
+ document.body.classList.add('sharing');document.getElementById('sharedPanel').classList.remove('hidden');
+ }catch(e){toast('共有レシピを読めませんでした：'+e.message);}}
+document.getElementById('sharedBtn').addEventListener('click',()=>{if(!currentUser)return;loadShared();});
+document.getElementById('backToMine').addEventListener('click',()=>{document.body.classList.remove('sharing');document.getElementById('sharedPanel').classList.add('hidden');});
+document.getElementById('sharedCards').addEventListener('click',e=>{
+ const b=e.target.closest('[data-view-shared]');if(!b)return;const r=sharedRows[Number(b.dataset.viewShared)];if(!r)return;
+ openModal('detail');
+ document.getElementById('modal').innerHTML=`<div class="modal-header"><strong>🌐 ${esc(r.owner)}さんの共有レシピ</strong><button type="button" class="xbtn" data-close>×</button></div><div class="modal-content"><h2>${esc(r.title)}</h2><p class="small">${esc(r.category)}</p><h3>材料</h3><div class="multiline">${esc(r.ingredients)}</div><h3>作り方</h3><div class="multiline">${esc(r.steps)}</div>${r.nutrition?`<h3>栄養情報</h3><div class="multiline">${esc(r.nutrition)}</div>`:''}<p class="small">自分用メモや元画像は共有されません。</p><button class="primary" type="button" id="copySharedRecipe">このレシピを自分用に保存</button></div>`;
+ document.getElementById('copySharedRecipe').addEventListener('click',async()=>{try{
+ const saved={...r,id:uuid(),notes:'共有レシピ（'+r.owner+' さん）から自分用にコピー',source:'',cover:'',rawText:'',originalName:'',createdAt:new Date().toISOString(),favorite:false,shared:false};delete saved.owner;
+ await putRecipe(saved);await refresh();closeModal();toast('自分のレシピに非公開で保存しました');
+ }catch(err){toast('保存できませんでした：'+err.message);}});
+});
+async function importLegacyRecipes(){
+ try{
+  const old=await new Promise((resolve,reject)=>{const req=indexedDB.open('recipebox-jp-v1');req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
+  if(!old.objectStoreNames.contains('recipes')){old.close();toast('旧レシピデータがありません');return;}
+  const existing=await new Promise((resolve,reject)=>{const req=old.transaction('recipes').objectStore('recipes').getAll();req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});old.close();
+  const pending=existing.filter(x=>x.title&&!recipes.find(r=>r.id===x.id));
+  if(!pending.length){toast('取り込む新しいレシピはありません');return;}
+  if(!confirm(`旧レシピ箱の${pending.length}品を、現在のアカウントに非公開でコピーしますか？`))return;
+  let n=0;for(const r of pending){await putRecipe({...r,shared:false});n++;}
+  await refresh();closeModal();toast(n+'品を非公開で取り込みました');
+ }catch(e){toast('旧データを取り込めませんでした：'+e.message);}
+}
+
 let db,recipes=[],filter='all',query='',editing=null,viewing=null,worker=null,processing=false,lastResults=[];
 
-const dbOpen=()=>new Promise((resolve,reject)=>{const req=indexedDB.open('recipebox-jp-v1',1);req.onupgradeneeded=()=>{const d=req.result;d.createObjectStore('recipes',{keyPath:'id'});d.createObjectStore('settings',{keyPath:'key'});};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
+const dbOpen=()=>new Promise((resolve,reject)=>{const req=indexedDB.open('recipebox-user-v1-'+currentUser.id,1);req.onupgradeneeded=()=>{const d=req.result;d.createObjectStore('recipes',{keyPath:'id'});d.createObjectStore('settings',{keyPath:'key'});};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});
 const tx=(store,mode='readonly')=>db.transaction(store,mode).objectStore(store);
 const reqDone=req=>new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});
 const allRecipes=()=>reqDone(tx('recipes').getAll());
 const setting=k=>reqDone(tx('settings').get(k));
 const putSetting=(key,value)=>reqDone(tx('settings','readwrite').put({key,value}));
-const putRecipe=r=>reqDone(tx('recipes','readwrite').put(r));
-const dropRecipe=id=>reqDone(tx('recipes','readwrite').delete(id));
+const putRecipe=async r=>{if(!currentUser)throw Error('ログインが必要です');await api('/api/recipes/'+encodeURIComponent(r.id),{method:'PUT',body:JSON.stringify(r)});await reqDone(tx('recipes','readwrite').put(r));};
+const dropRecipe=async id=>{if(!currentUser)throw Error('ログインが必要です');await api('/api/recipes/'+encodeURIComponent(id),{method:'DELETE'});await reqDone(tx('recipes','readwrite').delete(id));};
 let installPrompt=null;window.addEventListener('beforeinstallprompt',ev=>{ev.preventDefault();installPrompt=ev;const b=document.getElementById('installAction');if(b)b.hidden=false;});
 async function installApp(){if(installPrompt){const evt=installPrompt;installPrompt=null;await evt.prompt();}else{toast('Chrome右上の「︙」→「ホーム画面に追加」から登録できます。');}}
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('toast').classList.remove('show'),4300)}
@@ -64,7 +155,7 @@ function detail(id){const r=recipes.find(x=>x.id===id);if(!r)return;viewing=r.id
  <section><h3>👩‍🍳 作り方</h3><div class="multiline">${steps.map(x=>esc(x)).join('\n\n')||'未入力'}</div>${r.notes?`<h3>✏️ 自分用メモ</h3><div class="multiline">${esc(r.notes)}</div>`:''}</section></div>
  ${r.source?`<p class="meta-note">元の投稿：<a href="${esc(safeUrl(r.source))}" target="_blank" rel="noopener noreferrer">${esc(r.source)}</a></p>`:''}
  <p class="meta-note">※個人用の参考レシピです。元の写真やレシピを無断で一般公開しないでください。</p>
- <div class="detail-actions"><button class="primary" type="button" data-edit="${esc(r.id)}">✎ 編集する</button><button class="muted-btn" type="button" data-photo="${esc(r.id)}">🖼 画像を探す</button><button class="muted-btn" type="button" data-favorite="${esc(r.id)}">${r.favorite?'♥ お気に入りを外す':'♡ お気に入りにする'}</button><button class="muted-btn danger" data-delete="${esc(r.id)}" type="button">削除</button></div></div>`;
+ <div class="detail-actions"><button class="primary" type="button" data-edit="${esc(r.id)}">✎ 編集する</button><button class="muted-btn" type="button" data-photo="${esc(r.id)}">🖼 画像を探す</button><button class="muted-btn" type="button" data-favorite="${esc(r.id)}">${r.favorite?'♥ お気に入りを外す':'♡ お気に入りにする'}</button><button class="muted-btn" data-share="${esc(r.id)}" type="button">${r.shared?'🌐 共有をやめる':'🔒 非公開 → 共有する'}</button><button class="muted-btn danger" data-delete="${esc(r.id)}" type="button">削除</button></div></div>`;
 }
 function edit(id){const r=recipes.find(x=>x.id===id)||{id:uuid(),title:'',ingredients:'',steps:'',category:'その他',nutrition:'',notes:'',source:'',cover:'',coverAttribution:'',coverType:'',createdAt:new Date().toISOString(),favorite:false,searchTerm:'',rawText:''};editing=r.id;openModal('edit');$('modal').innerHTML=`<div class="modal-header"><h2>${id?'レシピを編集':'新しいレシピ'}</h2><button class="xbtn" type="button" data-close aria-label="閉じる">×</button></div>
  <form class="modal-content" id="editForm"><div class="two-cols"><div class="form-field"><label for="edTitle">レシピ名 *</label><input id="edTitle" class="form-control" value="${esc(r.title)}" required maxlength="120"></div>
@@ -82,7 +173,8 @@ function edit(id){const r=recipes.find(x=>x.id===id)||{id:uuid(),title:'',ingred
  });
 }
 function settings(){openModal('settings');$('modal').innerHTML=`<div class="modal-header"><h2>⚙ 設定とバックアップ</h2><button class="xbtn" data-close type="button">×</button></div><div class="modal-content">
- <h3>📱 保存場所</h3><p class="setting-blurb">レシピ・画像は現在お使いのブラウザ内（IndexedDB）に保存しています。会員登録は不要。別の端末には自動同期されません。ブラウザのデータを削除すると消えるため、バックアップをおすすめします。</p>
+ <h3>🔐 アカウント・保存場所</h3><p class="setting-blurb">ログイン中のID：${esc(currentUser?.username||'')}。レシピの文字情報はアカウントごとにクラウドへ保存・同期します。自分だけのメモは非公開です。自分の写真やスクリーンショットは、この端末に残し、クラウドや共有画面には送信しません。端末のブラウザを消す前にはバックアップしてください。</p>
+ <button class="muted-btn" data-legacy type="button">旧レシピ箱の保存データをこのアカウントにコピー</button>
  <div class="settings-flex"><button class="primary" data-export type="button">↓ バックアップを書き出す</button><button class="muted-btn" data-import type="button">↑ バックアップを取り込む</button></div>
  <div class="info-panel">🔐 スクリーンショットのOCRはブラウザ内で実行します。ただし最初の解析時、OCRプログラムと言語データをインターネットから読み込みます。参考画像検索はWikimedia Commonsに検索語を送ります。広告や行動追跡は搭載していません。</div>
  <h3>📲 ホーム画面に追加</h3><p class="setting-blurb">AndroidのChromeでは右上の「︙」→「ホーム画面に追加」または「アプリをインストール」を選んでください。iPhoneのSafariでは共有ボタンから「ホーム画面に追加」。公開されたHTTPSのURLで利用できます。</p><h3>🍽 ご利用上の注意</h3><p class="setting-blurb">料理や栄養成分はスクリーンショットの内容を機械的に記録したもので、検証済みではありません。加熱時間・分量・アレルギーを必ず確認してください。元のSNS画像は個人用保存の範囲で使用し、無断で再投稿しないでください。</p>
@@ -152,14 +244,28 @@ async function importFiles(files){if(processing||!files.length)return;processing
 processing=false;clearBusy();if(count){toast(`${count}品を登録しました${needEdit?'（'+needEdit+'品は手入力で修正が必要）':''}。文字認識結果をご確認ください。`);if(count===1){const latest=recipes.find(r=>r.originalName===files[0].name);if(latest)detail(latest.id);}}}
 async function backup(){const payload={app:'recipebox-jp',version:1,exportedAt:new Date().toISOString(),recipes};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`レシピ箱バックアップ_${new Date().toISOString().slice(0,10)}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),8000);toast('バックアップをダウンロードしました。大切に保管してください。');}
 async function importBackup(file){let data;try{data=JSON.parse(await file.text());if(!Array.isArray(data.recipes)||data.app!=='recipebox-jp')throw new Error('不正なバックアップ形式');if(data.recipes.length>5000)throw new Error('多すぎるレシピ');let n=0;for(const item of data.recipes){if(!item.title)continue;const r={...item,id:String(item.id||uuid()),title:String(item.title).slice(0,120),cover:safeImg(item.cover),createdAt:item.createdAt||new Date().toISOString(),favorite:!!item.favorite};await putRecipe(r);n++;}await refresh();closeModal();toast(`${n}品のバックアップを取り込みました。`);}catch(e){console.error(e);toast('バックアップを読み込めませんでした。レシピ箱のJSONを選んでください。');}}
-async function init(){try{db=await dbOpen();const seeded=await setting('initial-seed-v1');if(!seeded){for(const s of SEED_RECIPES)await putRecipe(s);await putSetting('initial-seed-v1',true);}await refresh();}catch(e){console.error(e);$('cards').innerHTML='<div class="empty">ブラウザに保存する領域を利用できません。プライベートモードを解除するか、別のブラウザで開いてください。</div>';toast('端末内データベースを利用できません。');}}
+async function init(){try{
+  db=await dbOpen();
+  const remote=await api('/api/recipes');
+  const cached=await allRecipes(), existing=new Map(cached.map(r=>[r.id,r]));
+  await reqDone(tx('recipes','readwrite').clear());
+  for(const r of remote.recipes||[]){const local=existing.get(r.id);const restored=local&&['own','screenshot'].includes(local.coverType)?{...r,cover:local.cover,coverType:local.coverType,coverAttribution:local.coverAttribution}:r;await reqDone(tx('recipes','readwrite').put(restored));}
+  const seeded=await setting('initial-seed-v1');
+  if(!seeded){if(!(remote.recipes||[]).length){for(const item of SEED_RECIPES)await putRecipe({...item,shared:false});}await putSetting('initial-seed-v1',true);}
+  await refresh();
+}catch(e){console.error(e);$('cards').innerHTML='<div class="empty">ログインしましたが、レシピの同期に失敗しました。接続を確認して再読み込みしてください。</div>';toast(e.message||'同期に失敗しました');}}
 $('cards').addEventListener('click',async e=>{const fav=e.target.closest('[data-favorite]');if(fav){e.stopPropagation();const r=recipes.find(x=>x.id===fav.dataset.favorite);if(r){await putRecipe({...r,favorite:!r.favorite});await refresh();}return;}const card=e.target.closest('[data-id]');if(card)detail(card.dataset.id);});
 $('cards').addEventListener('keydown',e=>{if(e.key==='Enter'){const c=e.target.closest('[data-id]');if(c)detail(c.dataset.id);}});
 $('modalShell').addEventListener('click',async e=>{
  if(e.target===$('modalShell')||e.target.closest('[data-close]')){closeModal();return;}
- const target=e.target.closest('[data-edit],[data-photo],[data-delete],[data-favorite],[data-export],[data-import],[data-use-photo],[data-reset-seed]');if(!target)return;
+ const target=e.target.closest('[data-edit],[data-photo],[data-delete],[data-favorite],[data-share],[data-export],[data-import],[data-use-photo],[data-reset-seed],[data-legacy]');if(!target)return;
  if(target.dataset.edit){edit(target.dataset.edit);return;}
  if(target.dataset.photo){imagePicker(target.dataset.photo);return;}
+ if(target.dataset.share){const id=target.dataset.share;const r=recipes.find(x=>x.id===id);if(!r)return;
+   if(!r.shared&&!confirm('このレシピの「料理名・材料・作り方・栄養情報」をログインした利用者に共有しますか？元スクショ・自分用メモ・写真は共有されません。第三者の投稿を無断転載しないでください。'))return;
+   try{await putRecipe({...r,shared:!r.shared});await refresh();detail(id);toast(r.shared?'共有を解除しました':'このレシピを共有しました');}catch(e){toast(e.message||'共有設定に失敗しました');}return;
+ }
+ if('legacy' in target.dataset){await importLegacyRecipes();return;}
  if(target.dataset.delete){const id=target.dataset.delete;const r=recipes.find(x=>x.id===id);if(confirm(`「${r?.title||'レシピ'}」を削除しますか？`)){await dropRecipe(id);await refresh();closeModal();toast('削除しました');}return;}
  if(target.dataset.favorite){const id=target.dataset.favorite;const r=recipes.find(x=>x.id===id);if(r){await putRecipe({...r,favorite:!r.favorite});await refresh();detail(id);}return;}
  if('export' in target.dataset){backup();return;}
@@ -177,7 +283,7 @@ document.querySelectorAll('[data-filter]').forEach(n=>n.addEventListener('click'
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('modalShell').classList.contains('open'))closeModal();});
 ['dragenter','dragover'].forEach(name=>document.addEventListener(name,e=>{e.preventDefault();if(e.dataTransfer?.types.includes('Files'))$('dropMask').classList.add('show');}));
 ['dragleave','drop'].forEach(name=>document.addEventListener(name,e=>{e.preventDefault();if(name==='drop'){$('dropMask').classList.remove('show');const fs=[...e.dataTransfer.files].filter(f=>f.type.startsWith('image/'));if(fs.length)importFiles(fs);}else if(e.target===document.documentElement||e.target===document.body)$('dropMask').classList.remove('show');}));
-init();
+authBoot();
 
 if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')) {window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(e=>console.info('オフライン登録不可',e)));}
 </script>
