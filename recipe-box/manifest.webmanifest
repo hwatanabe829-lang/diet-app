@@ -1,0 +1,26 @@
+{
+  "name": "わたしのレシピ箱",
+  "short_name": "レシピ箱",
+  "description": "スクショからレシピを読み取って、端末に保存する自分だけのレシピアプリ",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "lang": "ja",
+  "display": "standalone",
+  "background_color": "#FBF9F5",
+  "theme_color": "#D97846",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
